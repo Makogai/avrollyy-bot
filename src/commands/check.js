@@ -9,7 +9,8 @@ module.exports = {
             userId: interaction.user.id,
             channelId: interaction.channelId
         });
-        const link = `http://localhost:3000/auth?state=${encodeURIComponent(state)}`;
+        const appUrl = process.env.APP_URL || 'http://localhost:3000';
+        const link = `${appUrl}/auth?state=${encodeURIComponent(state)}`;
 
         const row = new ActionRowBuilder().addComponents(
             new ButtonBuilder()
