@@ -36,7 +36,7 @@ const port = process.env.PORT || 3000;
 const oauth2Client = new OAuth2Client(
     process.env.GOOGLE_CLIENT_ID,
     process.env.GOOGLE_CLIENT_SECRET,
-    `http://localhost:${port}/oauth2callback`
+    `${process.env.APP_URL}/oauth2callback`
 );
 
 // Setup Express routes for OAuth
